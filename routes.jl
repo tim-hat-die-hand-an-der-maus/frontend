@@ -4,8 +4,4 @@ using JSON2
 using Movies
 using MoviesController
 
-route("/") do
-  serve_static_file("welcome.html")
-end
-
-route("/movies", MoviesController.index)
+route("/", MoviesController.index)
