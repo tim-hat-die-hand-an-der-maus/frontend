@@ -1,0 +1,12 @@
+<div id="app">
+    <h1>Queue</h1>
+
+    <ul id="queue">
+        <%
+        for_each(movies) do movie
+        partial(joinpath(Genie.config.path_resources, "movies", "views", "_movie.jl.html"), movie =
+        movie)
+        end
+        %>
+    </ul>
+</div>

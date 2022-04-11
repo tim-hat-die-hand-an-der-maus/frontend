@@ -1,0 +1,11 @@
+<li class="queue-item">
+    <div>
+        <h2 class="queue-item-header">
+            <a href="https://imdb.com/title/tt$(movie.imdb.id)" class="queue-item-imdb-title" target="_blank">$(movie.imdb.title)</a>
+            <span class="queue-item-imdb-metadata">(<% movie.imdb.year %>) <% movie.imdb.rating %>⭐</span>
+        </h2>
+
+        <!--suppress HtmlUnknownTarget -->
+        <img src=$(movie.imdb.cover.url) alt="cover for $(movie.imdb.title)" class="queue-item-cover-image" width=250 height="$(250 * movie.imdb.cover.ratio)" />
+    </div>
+</li>

@@ -1,0 +1,42 @@
+body {
+    background-color: #252;
+    color: #9e9a93;
+}
+
+a {
+    color: #bebaf3;
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    margin-top: 60px;
+}
+
+#commitsha {
+    display: none;
+}
+
+.queue-item {
+    list-style: none;
+    flex: 1;
+}
+
+#queue {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.queue-item-cover-image {
+    max-height: 500px;
+}
+
+.queue-item-header {
+    height: 80px;
+}
+
+.queue-item-imdb-metadata {
+    margin-right: 1px;
+}
