@@ -1,0 +1,28 @@
+namespace: timhatdiehandandermaus
+
+deployment:
+  name: frontend
+  image: ghcr.io/tim-hat-die-hand-an-der-maus/frontend:__TAG__
+  imagePullPolicy: Always
+  revisionHistoryLimit: 1
+  ports:
+  - 8000
+  replicas: 3
+  labels:
+    app: frontend
+  requests:
+    cpu: 50m
+    memory: 20Mi
+
+service:
+  name: frontend
+  port: 8000
+  targetPort: 8000
+  appSelector: frontend
+
+ingress:
+  hosts:
+    - beta.timhatdiehandandermaus.consulting
+  secret: tls-frontend
+  issuer: letsencrypt-issuer
+  name: frontend
