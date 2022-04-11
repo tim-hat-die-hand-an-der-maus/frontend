@@ -10,7 +10,7 @@ COPY . /home/genie/app
 WORKDIR /home/genie/app
 
 # configure permissions
-RUN chown genie:genie -R *
+RUN chown genie:genie -R * .
 
 RUN chmod +x bin/repl
 RUN chmod +x bin/server
@@ -27,7 +27,7 @@ EXPOSE 8000
 
 # set up app environment
 ENV JULIA_DEPOT_PATH "/home/genie/.julia"
-ENV GENIE_ENV "dev"
+ENV GENIE_ENV "prod"
 ENV HOST "0.0.0.0"
 ENV PORT "8000"
 ENV WSPORT "8000"
@@ -35,6 +35,3 @@ ENV EARLYBIND "true"
 
 # run app
 CMD ["bin/server"]
-
-# or maybe include a Julia file
-# CMD julia -e 'using Pkg; Pkg.activate("."); include("IrisClustering.jl"); '
