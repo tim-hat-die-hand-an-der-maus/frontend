@@ -6,7 +6,7 @@ module MoviesController
     using MoviesController
 
     function queue()
-        response = HTTP.request("GET", "https://api.timhatdiehandandermaus.consulting/queue", [("Accept", "application/json")])
+        response = HTTP.request("GET", "http://api:8080/queue", [("Accept", "application/json")])
 
         if response.status == 200
             try
